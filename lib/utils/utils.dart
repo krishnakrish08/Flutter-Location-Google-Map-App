@@ -1,10 +1,10 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-const double CAMERA_ZOOM = 16;
-const double CAMERA_TILT = 80;
-const double CAMERA_BEARING = 30;
-const LatLng SOURCE_LOCATION = LatLng(30.8160362, 79.1571237);
-const LatLng DEST_LOCATION = LatLng(32.3037975, 75.0942071);
+const double cameraZoom = 16;
+const double cameraTilt = 80;
+const double cameraBearing = 30;
+const LatLng sourceLocation = LatLng(30.8160362, 79.1571237);
+const LatLng destLocation = LatLng(32.3037975, 75.0942071);
 
 String mapStyles = '''[
   {
