@@ -94,8 +94,8 @@ class _MapScreenState extends State<MapScreen> {
 
     // hard-coded destination for this example
     destinationLocation = LocationData.fromMap({
-      "latitude": DEST_LOCATION.latitude,
-      "longitude": DEST_LOCATION.longitude
+      "latitude": destLocation.latitude,
+      "longitude": destLocation.longitude
     });
   }
 
@@ -114,7 +114,7 @@ class _MapScreenState extends State<MapScreen> {
 
     sourcePinInfo = PinInformation(
       locationName: "Start Location",
-      location: SOURCE_LOCATION,
+      location: sourceLocation,
       pinPath: "assets/driving_pin.png",
       avatarPath: "assets/friend1.jpg",
       labelColor: Colors.orangeAccent,
@@ -122,7 +122,7 @@ class _MapScreenState extends State<MapScreen> {
 
     destinationPinInfo = PinInformation(
       locationName: "End Location",
-      location: DEST_LOCATION,
+      location: destLocation,
       pinPath: "assets/destination_map_marker.png",
       avatarPath: "assets/friend2.jpg",
       labelColor: Colors.greenAccent,
@@ -202,9 +202,9 @@ class _MapScreenState extends State<MapScreen> {
     // every time the location changes, so the camera
     // follows the pin as it moves with an animation
     CameraPosition cPosition = CameraPosition(
-      zoom: CAMERA_ZOOM,
-      tilt: CAMERA_TILT,
-      bearing: CAMERA_BEARING,
+      zoom: cameraZoom,
+      tilt: cameraTilt,
+      bearing: cameraBearing,
       target: LatLng(
         currentLocation?.latitude ?? 0,
         currentLocation?.longitude ?? 0,
@@ -243,10 +243,10 @@ class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
     CameraPosition initialCameraPosition = const CameraPosition(
-      zoom: CAMERA_ZOOM,
-      tilt: CAMERA_TILT,
-      bearing: CAMERA_BEARING,
-      target: SOURCE_LOCATION,
+      zoom: cameraZoom,
+      tilt: cameraTilt,
+      bearing: cameraBearing,
+      target: sourceLocation,
     );
 
     if (currentLocation != null) {
@@ -255,9 +255,9 @@ class _MapScreenState extends State<MapScreen> {
           currentLocation?.latitude ?? 0,
           currentLocation?.longitude ?? 0,
         ),
-        zoom: CAMERA_ZOOM,
-        tilt: CAMERA_TILT,
-        bearing: CAMERA_BEARING,
+        zoom: cameraZoom,
+        tilt: cameraTilt,
+        bearing: cameraBearing,
       );
     }
 
